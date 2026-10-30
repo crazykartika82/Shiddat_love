@@ -1788,7 +1788,7 @@ const heartLetterText =
 const heartLetterMessage = `Kabhi-kabhi main sochta hoon... Aakhir aap mein aisa kya hai, ki aapka naam aate hi sab kuch ek pal ke liye ruk sa jaata hai. Pata nahi kab aapki baatein meri aadat ban gayi, aapki muskurahat meri khushi, aur aapki fikar mere dil ka ek hissa.
 Main jaanta hoon... Zindagi filmoo jaisi nahi hoti. Yahan raaste aasaan nahi hote, waqt hamesha ek jaisa nahi rehta, aur har kahani ko uska manpasand anjaam nahi milta.
 Lekin kuch log sirf zindagi mein aate nahi hain, woh zindagi ka matlab thoda aur khoobsurat bana dete hain. Aap mere liye wahi ehsaas hain, jise main jitna samajhne ki koshish karta hoon, utna hi mehsoos karta hoon.
-Kabhi-kabhi darr bhi lagta hai... Ki kahin waqt badal na jaaye, kahi halaat humein alag raaston par na le jaaye. Lekin kartika aapko pata hai  vo jo दस कदम honge na aapke mere tak aane ke liye vo mere pyaar aur mere efforts se bhuat jaida bare honge ❤️
+Kabhi-kabhi darr bhi lagta hai... Ki kahin waqt badal na jaaye, kahi halaat humein alag raaston par na le jaaye. Lekin kartika aapko pata hai vo jo दस कदम honge na aapke mere tak aane ke liye vo mere pyaar aur mere efforts se kai guna jaida bare honge ❤️
  Vaise aapko yaad hai aapne ek baar khath me kaya likha tha ki ritik ye sab sirf movie me he hota hai reel ho real life dono alag alag hoti hai, real life me thori koi jagi ke jaisa kar sakta hai, lakin aisa nhi hai meri kartika fir aapne sacha pyaar dekha he nhi hai, mai hu na aapke liye aapko pata hai jagi ko to sirf ek he ocean paar karna tha kartika se milne ke liye jo ki sirf 32.19 km tha. mai to uss se bhi jaida kar sakta hu apni pyaari kartika ke liye ❤️
 \n\n
 I LOVE YOU NA 🥹❤️‍🩹`;
