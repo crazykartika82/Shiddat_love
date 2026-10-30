@@ -67,8 +67,6 @@ function getNextBirthday() {
         0
     );
 
-    // If birthday has passed,
-    // use next year.
     if (birthday <= now) {
 
         birthday = new Date(
@@ -86,73 +84,87 @@ function getNextBirthday() {
 }
 
 
-let birthdayDate =
-    getNextBirthday();
+let birthdayDate = getNextBirthday();
 
 
-const daysElement =
-    document.getElementById("days");
+// Elements
+const daysElement = document.getElementById("days");
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
 
-const hoursElement =
-    document.getElementById("hours");
+const countdownSection = document.querySelector(".countdown-section");
 
-const minutesElement =
-    document.getElementById("minutes");
+const countdownLabel = countdownSection.querySelector(".section-label");
+const countdownHeading = countdownSection.querySelector("h2");
+const countdownText = countdownSection.querySelector("p:not(.section-label)");
+const countdownContainer = countdownSection.querySelector(".countdown");
 
-const secondsElement =
-    document.getElementById("seconds");
+
+// Original text
+const originalLabel = "THE COUNTDOWN";
+const originalHeading = "Counting Down To Your Day";
+const originalText = "Every second brings us closer to your special day.";
 
 
 function updateCountdown() {
 
     const now = new Date();
 
-    let difference =
-        birthdayDate.getTime() -
-        now.getTime();
+    // Check birthday: January 8
+    const isBirthdayToday =
+        now.getMonth() === 0 &&
+        now.getDate() === 8;
 
 
-    // Birthday reached
-    if (difference <= 0) {
+    // Birthday special message
+    if (isBirthdayToday) {
 
-        daysElement.textContent = "00";
-        hoursElement.textContent = "00";
-        minutesElement.textContent = "00";
-        secondsElement.textContent = "00";
+        countdownLabel.textContent =
+            "AND THE WAIT FINALLY ENDS...";
 
-        // Calculate next birthday
-        birthdayDate =
-            getNextBirthday();
+        countdownHeading.textContent =
+            "8 January";
+
+        countdownText.textContent =
+            "The day the world became a little more beautiful. 💗";
+
+        countdownContainer.style.display = "none";
 
         return;
     }
 
 
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
+    // Restore countdown after birthday
+    countdownLabel.textContent = originalLabel;
+
+    countdownHeading.textContent = originalHeading;
+
+    countdownText.textContent = originalText;
+
+    countdownContainer.style.display = "flex";
 
 
-    const hours =
-        Math.floor(
-            (difference /
-                (1000 * 60 * 60)) % 24
-        );
+    // Calculate remaining time
+    let difference =
+        birthdayDate.getTime() - now.getTime();
 
 
-    const minutes =
-        Math.floor(
-            (difference /
-                (1000 * 60)) % 60
-        );
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
 
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
 
-    const seconds =
-        Math.floor(
-            (difference / 1000) % 60
-        );
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
 
 
     daysElement.textContent =
@@ -166,6 +178,7 @@ function updateCountdown() {
 
     secondsElement.textContent =
         String(seconds).padStart(2, "0");
+
 }
 
 
@@ -174,19 +187,15 @@ updateCountdown();
 
 
 // Update every second
-setInterval(
-    updateCountdown,
-    1000
-);
+setInterval(updateCountdown, 1000);
+
 
 
 // =========================
 // BIRTHDAY WISH
 // =========================
 
-// =========================
-// BIRTHDAY WISH BUTTON
-// =========================
+
 
 const wishButton =
     document.getElementById("wish-btn");
