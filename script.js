@@ -110,6 +110,7 @@ const originalText = "Every second brings us closer to your special day.";
 function updateCountdown() {
 
     const now = new Date();
+    birthdayDate = getNextBirthday();
 
     // Check birthday: January 8
     const isBirthdayToday =
