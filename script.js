@@ -1050,13 +1050,28 @@ const allVideos = document.querySelectorAll("video");
 
 allVideos.forEach((video) => {
 
+    // video.addEventListener("play", () => {
+
+    //     if (!music.paused) {
+    //         music.pause();
+    //     }
+
+    // });
     video.addEventListener("play", () => {
 
-        if (!music.paused) {
-            music.pause();
-        }
+    // Background music pause
+    if (!music.paused) {
+        music.pause();
+    }
 
+    // Baaki saare videos pause
+    allVideos.forEach((otherVideo) => {
+        if (otherVideo !== video) {
+            otherVideo.pause();
+        }
     });
+
+});
 
     video.addEventListener("pause", () => {
 
