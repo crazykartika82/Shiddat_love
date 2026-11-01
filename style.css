@@ -8150,3 +8150,23 @@ section {
 #heart-letter-text {
     white-space: pre-wrap;
 }
+
+
+.video-container {
+    overflow: hidden !important;
+}
+
+#memory-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transform: scale(1.12) !important;
+    display: block !important;
+}
+#memory-video {
+    filter: contrast(1.08) saturate(1.08) brightness(1.04) !important;
+    image-rendering: auto !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
