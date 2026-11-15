@@ -2091,3 +2091,41 @@ if (letterVideo && playSceneBtn) {
     });
 
 }
+
+const weddingCardButton = document.getElementById("wedding-card-open");
+const weddingSection = document.getElementById("wedding-story");
+const weddingFullCard = document.getElementById("wedding-card-fullscreen");
+const weddingCardClose = document.getElementById("wedding-card-close");
+
+if (weddingCardButton && weddingSection && weddingFullCard && weddingCardClose) {
+    weddingCardButton.addEventListener("click", () => {
+        weddingSection.classList.add("is-open");
+        weddingCardButton.setAttribute("aria-expanded", "true");
+
+        const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? 0
+            : 500;
+
+        window.setTimeout(() => {
+            if (!weddingFullCard.open) {
+                weddingFullCard.showModal();
+                weddingCardClose.focus();
+            }
+        }, delay);
+    });
+
+    weddingCardClose.addEventListener("click", () => {
+        weddingFullCard.close();
+    });
+
+    weddingFullCard.addEventListener("click", (event) => {
+        if (event.target === weddingFullCard) {
+            weddingFullCard.close();
+        }
+    });
+
+  weddingFullCard.addEventListener("close", () => {
+    weddingSection.classList.remove("is-open");
+    weddingCardButton.setAttribute("aria-expanded", "false");
+});
+}
