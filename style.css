@@ -6034,16 +6034,23 @@ section {
     /* =========================
        FOOTER
     ========================= */
+footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 38px 20px calc(38px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    border-top: 1px solid rgba(255, 110, 160, 0.25);
+    background: linear-gradient(180deg, #120a0e 0%, #080808 100%);
+    color: #f0c6d5;
+    line-height: 1.7;
+}
 
-    footer {
-        padding: 35px 15px;
-    }
-
-    footer p {
-        font-size: 13px;
-        line-height: 1.6;
-    }
-
+footer p {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: clamp(13px, 2.5vw, 15px);
+    overflow-wrap: anywhere;
 }
 
 
@@ -8577,5 +8584,32 @@ section {
 
     .wedding-card-fullscreen[open] {
         animation: none;
+    }
+}
+@media (max-width: 700px) {
+    footer {
+        padding: 28px 15px calc(28px + env(safe-area-inset-bottom, 0px));
+    }
+
+    footer p {
+        line-height: 1.6;
+    }
+}
+   @media (max-width: 600px) {
+    .video-section {
+        padding: 52px 12px 32px !important;
+    }
+
+    .video-section h2 {
+        max-width: 22ch;
+        margin: 0 auto 16px;
+        font-size: clamp(24px, 6.5vw, 30px);
+        line-height: 1.2;
+    }
+
+    .video-container {
+        height: min(340px, 52dvh) !important;
+        min-height: min(340px, 52dvh) !important;
+        margin: 20px auto 0 !important;
     }
 }
